@@ -157,26 +157,35 @@
 						</tr>
 					</thead>
 					<tbody>
-					<c:forEach items="${startupAudits }" var="startupAudit">
-					<form action="updateauditrow" method="post" enctype="multipart/form-data">
-						<tr> 
-							<td><input type="text" name="srno" value="${startupAudit.audit_srno }" class="form-control" readonly></td>
-							<td><input type="text" name="question" value="${startupAudit.question }" class="form-control" readonly></td>
-							<td><input type="text" name="maxscore" value="${startupAudit.maxscore }" class="form-control" readonly></td>
-							<td><input type="text" name="weight" value="${startupAudit.weight }" class="form-control" readonly></td>
-							<td><input type="text" name="actualscore" value="${startupAudit.actualscore }" class="form-control"></td>
-							<td><input type="text" name="remark" value="${startupAudit.remark }" class="form-control"></td>
-							<td>
-							<c:if test="${  empty evidenceupload }"> 
-							<input type="file" name="eupload"  class="form-control">
-							</c:if>
-							</td>
-							<td><c:if test="${ not empty evidenceupload }"> 
-							<a href="${startupAudit.evidenceupload }"  class="btn btn-outline-warning" download>Download</a>
-							</c:if></td>
-							<td><button type="submit" class="btn btn-primary">Save</button></td>
-						</tr>
-						</form>
+						<c:forEach items="${startupAudits }" var="startupAudit">
+							<form action="updateauditrow" method="post"
+								enctype="multipart/form-data">
+								<tr>
+									<td><input type="text" name="srno"
+										value="${startupAudit.audit_srno }" class="form-control"
+										readonly></td>
+									<td><input type="text" name="question"
+										value="${startupAudit.question }" class="form-control"
+										readonly></td>
+									<td><input type="text" name="maxscore"
+										value="${startupAudit.maxscore }" class="form-control"
+										readonly></td>
+									<td><input type="text" name="weight"
+										value="${startupAudit.weight }" class="form-control" readonly></td>
+									<td><input type="text" name="actualscore"
+										value="${startupAudit.actualscore }" class="form-control"></td>
+									<td><input type="text" name="remark"
+										value="${startupAudit.remark }" class="form-control"></td>
+									<td><input type="file" name="eupload" class="form-control">
+									</td>
+									<td><c:if
+											test="${ not empty startupAudit.evidenceupload }">
+											<a href="<%=request.getContextPath()%>/${startupAudit.audit_srno }/${startupAudit.evidenceupload }"
+												class="btn btn-outline-warning" download>Download</a>
+										</c:if></td>
+									<td><button type="submit" class="btn btn-primary">Save</button></td>
+								</tr>
+							</form>
 						</c:forEach>
 						<!-- Add more rows using JavaScript to dynamically generate the table -->
 					</tbody>
