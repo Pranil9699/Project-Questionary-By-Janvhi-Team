@@ -55,8 +55,8 @@
 
 </head>
 
-<body>
-<c:if test="${ not empty msg}">
+<body class="bg-light">
+	<c:if test="${ not empty msg}">
 		<script>
 			alert("<c:out value="${msg}" />")
 		</script>
@@ -88,58 +88,65 @@
 							<label for="auditorTeam" class="form-label">Auditor Team</label>
 							<c:if test="${not empty Auditor_Team }">
 								<input type="text" class="form-control" id="auditorTeam"
-									placeholder="Auditor Team" value="<c:out value="${Auditor_Team}"/>"  readonly>
+									placeholder="Auditor Team"
+									value="<c:out value="${Auditor_Team}"/>" readonly>
 							</c:if>
 
 							<c:if test="${empty Auditor_Team }">
-							<input type="text" class="form-control" name="Auditor_Team" id="auditorTeam"
-									placeholder="Auditor Team" value="">
+								<input type="text" class="form-control" name="Auditor_Team"
+									id="auditorTeam" placeholder="Auditor Team" value="">
 							</c:if>
 						</div>
 						<div class="col-md-6 mb-3">
-							<label for="auditee" class="form-label">Auditee</label> 
+							<label for="auditee" class="form-label">Auditee</label>
 							<c:if test="${not empty Auditee }">
-							<input type="text" class="form-control" id="auditee"
-								placeholder="Auditee" value="<c:out value="${ Auditee}" />" readonly>
-								</c:if>
-								<c:if test="${ empty Auditee }">
-								<input type="text" class="form-control" id="auditee" name="Auditee"
-								placeholder="Auditee" value="">
-								</c:if>
+								<input type="text" class="form-control" id="auditee"
+									placeholder="Auditee" value="<c:out value="${ Auditee}" />"
+									readonly>
+							</c:if>
+							<c:if test="${ empty Auditee }">
+								<input type="text" class="form-control" id="auditee"
+									name="Auditee" placeholder="Auditee" value="">
+							</c:if>
 						</div>
 					</div>
 
 					<div class="row">
 						<div class="col-md-6 mb-3">
 							<label for="processArea" class="col-form-label">Process
-								Area</label> 
-								<c:if test="${not empty processarea }">
-								
+								Area</label>
+							<c:if test="${not empty processarea }">
+
 								<input type="text" class="form-control form-control-green"
-								id="processArea" placeholder="Process Area" value="<c:out value="${ processarea}" />" readonly>
-								</c:if>
-								<c:if test="${ empty processarea }">
-								<input type="text" class="form-control form-control-green" name="processarea"
-								id="processArea" placeholder="Process Area" value="" >
-								</c:if>
+									id="processArea" placeholder="Process Area"
+									value="<c:out value="${ processarea}" />" readonly>
+							</c:if>
+							<c:if test="${ empty processarea }">
+								<input type="text" class="form-control form-control-green"
+									name="processarea" id="processArea" placeholder="Process Area"
+									value="">
+							</c:if>
 						</div>
 						<div class="col-md-6 mb-3">
 							<label for="questionCategory" class="col-form-label">Question
-								Category</label> 
-								<c:if test="${not empty questioncategory }">
-								<input type="text"
-								class="form-control form-control-blue" id="questionCategory"
-								placeholder="Question Category" value="<c:out value="${ questioncategory}"/>" readonly>
-								</c:if>
-								<c:if test="${ empty questioncategory }">
-								<input type="text"
-								class="form-control form-control-blue" id="questionCategory"
-								placeholder="Question Category"   name="questioncategory">
-								</c:if>
+								Category</label>
+							<c:if test="${not empty questioncategory }">
+								<input type="text" class="form-control form-control-blue"
+									id="questionCategory" placeholder="Question Category"
+									value="<c:out value="${ questioncategory}"/>" readonly>
+							</c:if>
+							<c:if test="${ empty questioncategory }">
+								<input type="text" class="form-control form-control-blue"
+									id="questionCategory" placeholder="Question Category"
+									name="questioncategory">
+							</c:if>
 						</div>
-						
+
 					</div>
-					<div class="text-center mt-2 mb-2"><input type="submit" value="Save" class="btn btn-outline-success" ></div>
+					<div class="text-center mt-2 mb-2">
+						<input type="submit" value="Save" class="btn btn-outline-success">
+						<a href="Home.jsp" class="btn btn-outline-warning">Goto Home</a>
+					</div>
 				</form>
 
 				<table class="table table-responsive border border-color-red">
@@ -164,9 +171,9 @@
 									<td><input type="text" name="srno"
 										value="${startupAudit.audit_srno }" class="form-control"
 										readonly></td>
-									<td><input type="text" name="question"
-										value="${startupAudit.question }" class="form-control"
-										readonly></td>
+									<td><textarea  name="question"
+										 class="form-control"
+										readonly>${startupAudit.question }</textarea></td>
 									<td><input type="text" name="maxscore"
 										value="${startupAudit.maxscore }" class="form-control"
 										readonly></td>
@@ -174,16 +181,16 @@
 										value="${startupAudit.weight }" class="form-control" readonly></td>
 									<td><input type="text" name="actualscore"
 										value="${startupAudit.actualscore }" class="form-control"></td>
-									<td><input type="text" name="remark"
-										value="${startupAudit.remark }" class="form-control"></td>
-									<td><input type="file" name="eupload" class="form-control">
+									<td><textarea  name="remark"
+										class="form-control">${startupAudit.remark }</textarea></td>
+									<td><input type="file" name="eupload" class="form-control mt-3">
 									</td>
 									<td><c:if
 											test="${ not empty startupAudit.evidenceupload }">
 											<a href="<%=request.getContextPath()%>/${startupAudit.audit_srno }/${startupAudit.evidenceupload }"
-												class="btn btn-outline-warning" download>Download</a>
+												class="btn btn-outline-warning mt-3" download>Download</a>
 										</c:if></td>
-									<td><button type="submit" class="btn btn-primary">Save</button></td>
+									<td><button type="submit" class="btn btn-primary mt-3" >Save</button></td>
 								</tr>
 							</form>
 						</c:forEach>

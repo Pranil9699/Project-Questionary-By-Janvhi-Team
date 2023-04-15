@@ -32,15 +32,15 @@
 </style>
 
 </head>
-<body>
+<body class="bg-light">
 	<div class="container">
 	<div class="card mt-5 p-4 mb-5">
 		<div class="row justify-content-center">
 			<div class="col-md-8 col-lg-12 p-3">
 				<h3 class="text-center">Question Category</h3>
-				<div class="d-flex justify-content-center  container mt-5">
-					<a href="first.jsp" class="btn fs-2 btn-primary">Create New Question Set</a>
-					<a href="view.jsp" class="btn fs-2 btn-secondary">&nbsp;View Question Set&nbsp;</a>
+				<div class="d-flex justify-content-center  container mt-5" >
+					<a href="first.jsp" class="btn fs-2 btn-primary">Create New</a>
+					<a href="view.jsp" class="btn fs-2 btn-secondary">&nbsp;View&nbsp;</a>
 				</div>
 			</div>
 		</div>

@@ -8,11 +8,6 @@ import javax.persistence.*;
 @Table
 public class StartupAudit {
 
-	/*
-	 * audit_Srno longint (primarykey) auditdate date auditorteam vc(255) auditee
-	 * vc(255) processarea vc(100) questioncategory vc(100) question vc(255)
-	 * actualscore double remark vc(999) evidenceupload vc(999)
-	 */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column

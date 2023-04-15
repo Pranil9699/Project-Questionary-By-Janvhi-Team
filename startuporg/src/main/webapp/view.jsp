@@ -43,8 +43,7 @@
 		<div class="card mt-5 p-4 mb-5">
 
 			<h4 class="text-center">Question Category</h4>
-			<form action="uploadquestion" method="post"
-				enctype="multipart/form-data">
+			<form action="searchquestion" method="post">
 				<div class="form-group">
 					<label for="processarea">Select Process Area</label> <select
 						class="form-control" name="processarea" id="processarea" required>
@@ -97,9 +96,56 @@
 				</div>
 				<div class="container text-center">
 					<a href="Home.jsp" class="btn btn-secondary">&nbsp;&nbsp;Back&nbsp;&nbsp;</a>
-					<input type="submit" class="btn btn-primary" value="Submit">
+					<input type="submit" class="btn btn-primary" value="Search">
 				</div>
 			</form>
+			<table class="table table-responsive border border-color-red bg-light mt-3">
+					<thead>
+						<tr>
+							<th scope="col">Sr. No.</th>
+							<th scope="col">Question</th>
+							<th scope="col">Max</th>
+							<th scope="col">Weight</th>
+							<th scope="col">Actual Score</th>
+							<th scope="col">Remark</th>
+							
+							<th scope="col">Download</th>
+							
+						</tr>
+					</thead>
+					<tbody>
+						<c:forEach items="${startupAuditsview }" var="startupAudit">
+							<form action="updateauditrow" method="post"
+								enctype="multipart/form-data">
+								<tr>
+									<td><input type="text" name="srno"
+										value="${startupAudit.audit_srno }" class="form-control"
+										readonly></td>
+									<td><textarea  name="question"
+										 class="form-control"
+										readonly>${startupAudit.question }</textarea></td>
+									<td><input type="text" name="maxscore"
+										value="${startupAudit.maxscore }" class="form-control"
+										readonly></td>
+									<td><input type="text" name="weight"
+										value="${startupAudit.weight }" class="form-control" readonly></td>
+									<td><input type="text" name="actualscore"
+										value="${startupAudit.actualscore }" class="form-control" readonly></td>
+									<td><textarea  name="remark"
+										class="form-control" readonly >${startupAudit.remark }</textarea></td>
+									
+									<td><c:if
+											test="${ not empty startupAudit.evidenceupload }">
+											<a href="<%=request.getContextPath()%>/${startupAudit.audit_srno }/${startupAudit.evidenceupload }"
+												class="btn btn-outline-warning mt-3" download>Download</a>
+										</c:if></td>
+									
+								</tr>
+							</form>
+						</c:forEach>
+						
+					</tbody>
+				</table>
 		</div>
 	</div>
 
