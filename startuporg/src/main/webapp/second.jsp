@@ -12,11 +12,12 @@
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
 	rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="logo_header.css">
 </head>
 
 <body>
 	<div class="container mt-5 card card-body">
-
+<%@ include file="logo_header.jsp" %>
 		<form action="uploadquestiondata" method="post" enctype="multipart/form-data">
 			<h2 class="fs-4">
 				Process Area &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -47,7 +48,7 @@
 							</td>
 							<td><input type="number" name="maximum[]" class="form-control">
 							</td>
-							<td><input type="button" value="Delete" disabled
+							<td class="text-center"><input type="button" value="Delete" disabled
 								class="btn btn-danger" /></td>
 						</tr>
 					</tbody>

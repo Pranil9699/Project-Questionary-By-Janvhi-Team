@@ -13,49 +13,10 @@
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
 	rel="stylesheet">
-<style>
-/* Responsive styles for small devices */
-@media ( max-width : 576px) {
-	.col-form-label {
-		text-align: left;
-	}
-}
-
-/* Responsive styles for medium devices */
-@media ( min-width : 576px) and (max-width: 992px) {
-	.col-form-label {
-		text-align: right;
-		padding-top: 8px;
-	}
-}
-
-/* Set custom colors for form elements */
-.form-control:focus {
-	border-color: #00a0d6;
-	box-shadow: 0 0 0 0.2rem rgba(0, 160, 214, 0.25);
-}
-
-.form-select:focus {
-	border-color: #00a0d6;
-	box-shadow: 0 0 0 0.2rem rgba(0, 160, 214, 0.25);
-}
-
-/* Set background color for save button */
-.btn-primary {
-	background-color: #00a0d6;
-	border-color: #00a0d6;
-}
-
-/* Set hover and active color for save button */
-.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
-	background-color: #0081ab;
-	border-color: #0081ab;
-}
-</style>
-
+	<link rel="stylesheet" type="text/css" href="logo_header.css">
 </head>
 
-<body class="bg-light">
+<body class="">
 	<c:if test="${ not empty msg}">
 		<script>
 			alert("<c:out value="${msg}" />")
@@ -63,8 +24,8 @@
 	</c:if>
 	<div class="container mt-3">
 
-		<div class="card">
-
+		<div class="card-body border border-black">
+<%@ include file="logo_header.jsp" %>
 
 			<div class="card-body p-2">
 				<header class="header text-center display-6">Startup-Audit</header>

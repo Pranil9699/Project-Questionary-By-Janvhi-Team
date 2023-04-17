@@ -7,54 +7,28 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 <title>Question Category Master</title>
-
-<!-- Bootstrap CSS -->
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0/css/bootstrap.min.css">
-
-<!-- Materialize CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
-<!-- Custom CSS -->
-<style>
-
-	.container {
-		margin-top: 50px;
-	}
-	.btn {
-		margin-right: 10px;
-	}
-	@media (max-width: 768px) {
-		.btn {
-			margin-top: 10px;
-		}
-	}
-</style>
-
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="logo_header.css">
 </head>
 <body class="bg-light">
 	<div class="container">
-	<div class="card mt-5 p-4 mb-5">
-		<div class="row justify-content-center">
-			<div class="col-md-8 col-lg-12 p-3">
-				<h3 class="text-center">Question Category</h3>
-				<div class="d-flex justify-content-center  container mt-5" >
-					<a href="first.jsp" class="btn fs-2 btn-primary">Create New</a>
-					<a href="view.jsp" class="btn fs-2 btn-secondary">&nbsp;View&nbsp;</a>
+
+		<div class="card mt-5 p-4 mb-5">
+			
+			<%@ include file="logo_header.jsp" %>
+			
+			<div class="row justify-content-center">
+				<div class="col-md-8 col-lg-12 p-3">
+					<h3 class="text-center">Question Category</h3>
+					<div class="d-flex justify-content-center  container mt-5">
+						<a href="first.jsp" class="btn btn-primary">Create New</a> <a
+							href="view.jsp" class="btn  btn-secondary">&nbsp;View&nbsp;</a>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	</div>
-
-	<!-- jQuery -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-	<!-- Bootstrap JS -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
-
-	<!-- Materialize JS -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
 </body>
 </html>
